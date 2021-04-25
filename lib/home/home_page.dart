@@ -21,7 +21,7 @@ class _HomePageState extends State<HomePage> {
   void initState() {
     super.initState();
     controller.getUser();
-    controller.getQuizzes();
+      controller.getQuizzes();
     //Sempre que houver uma alteração, ela será captada pelo ValueNotifier e o setState atualizará a página
     controller.stateNotifier.addListener(() {
       setState((){});
@@ -82,7 +82,7 @@ class _HomePageState extends State<HomePage> {
                             Navigator.push(
                               context, 
                               MaterialPageRoute(
-                                builder: (context) => ChallengePage(questions: e.questions,)));
+                                builder: (context) => ChallengePage(questions: e.questions, title: e.title)));
                           },
                         ),
                       )
